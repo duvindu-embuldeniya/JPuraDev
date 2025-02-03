@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="formPage my-xl">
+        <div class="content-box">
+            <div class="formWrapper">
+
+
+                <form class="form" accept="" method="POST">
+                    {% csrf_token %}
+
+   
+                    
+                    Are you sure you want to delete this '{{tag.name}}' tag?
+                    <br>
+         
+
+                    <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+
+                
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}
