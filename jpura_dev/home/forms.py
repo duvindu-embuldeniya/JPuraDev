@@ -11,6 +11,7 @@ class ProjectForm(ModelForm):
         fields = ['title', 'image', 'description', 'source_link']
 
         # widgets = {
+        
         #     'tags' : forms.CheckboxSelectMultiple(),
         # }
 
@@ -31,17 +32,19 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
+        #labels = {
+            #'email': 'Emaillll', #appear
+            #'password1': 'Password 1st', #not support as theay are default
+
+        #}
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists():
             raise ValidationError('This email is already taken!')
         return email
 
-        # labels = {
-        #     'email': 'Emaillll', #appear
-        #     'password1': 'Password 1st', #not support as theay are default
 
-        # }
 
     def __init__(self, *args, **kwargs):
         super(UserRegistrationForm, self).__init__(*args, **kwargs)

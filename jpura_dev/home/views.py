@@ -18,10 +18,10 @@ def home(request): #profiles
     profiles,q = searchProfiles(request)  
 
     page = request.GET.get('page')
-    results = 2
+    results = 3
     paginator = Paginator(profiles, results)
 
-    try:
+    try: 
         profiles = paginator.page(page)
 
     except PageNotAnInteger:

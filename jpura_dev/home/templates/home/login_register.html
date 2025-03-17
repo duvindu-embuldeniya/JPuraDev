@@ -18,7 +18,7 @@
             {% csrf_token %}
 
             {% for field in form %}
-            <!-- Input:Text -->
+
             <div class="form__field">
               <label for="formInput#text">{{field.label}}</label>
               {{field}}
@@ -31,6 +31,7 @@
                 <p style="color: red;">{{error}}</p>
               {% endfor %}
             </div>
+            
             {% endfor %}
   
             <div class="auth__actions">

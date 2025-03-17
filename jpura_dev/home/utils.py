@@ -1,6 +1,6 @@
 from django.db.models import Q
 from . models import Profile, Project, Tag
-
+ 
 def searchProfiles(request):
     q = request.GET.get('q') if request.GET.get('q') else ''
 
